@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:work_bee/core/theme/app_theme.dart';
 // import 'package:work_bee/home.dart';
-import 'package:work_bee/login/login_page.dart';
+import 'package:work_bee/views/login/login_page.dart';
+import 'package:work_bee/views/sign_page/signup_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget {
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.system,
       // home: const HomePage(),
-      home: const LoginPage(),
+      // home: const LoginPage(),
+      home: const SignUpPage(),
     );
   }
 }

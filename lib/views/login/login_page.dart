@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:work_bee/core/theme/app_helper.dart';
-import '../core/utils/validator.dart';
+import '../../core/utils/validator.dart';
+import '../sign_page/signup_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -140,6 +141,10 @@ class _LoginPageState extends State<LoginPage> {
                         if (_formKey.currentState!.validate()) {
                           // Perform login
                         }
+
+                        Navigator.push(context, MaterialPageRoute(
+                          builder: (context) => const SignUpPage(),
+                        ));
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.blue.shade100,
