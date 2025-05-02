@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:work_bee/core/theme/app_theme.dart';
+import 'package:work_bee/views/AvailabilitySubmissionPage/AvailabilitySubmissionPage.dart';
 import 'package:work_bee/views/ConfirmOTp/confirm_otp.dart';
 import 'package:work_bee/views/Dashboard/dashboard_page.dart';
 // import 'package:work_bee/home.dart';
@@ -16,16 +17,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Theming Example',
-      theme: AppTheme.lightTheme,
-      darkTheme: AppTheme.darkTheme,
-      themeMode: ThemeMode.system,
-      // home: const HomePage(),
-      // home: const LoginPage(),
-      // home: const SignUpPage(),
-      // home: const ConfirmationCodePage(),
-      home: const DashboardPage(),
-    );
+        debugShowCheckedModeBanner: false,
+        title: 'Theming Example',
+        theme: AppTheme.lightTheme,
+        darkTheme: AppTheme.darkTheme,
+        themeMode: ThemeMode.system,
+        // home: const HomePage(),
+        // home: const LoginPage(),
+        // home: const SignUpPage(),
+        // home: const ConfirmationCodePage(),
+        // home: const DashboardPage(), // Have to work with light and night mode
+        home: const AvailabilitySubmissionPage());
   }
 }
