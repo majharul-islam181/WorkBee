@@ -24,6 +24,9 @@ class AppTheme {
       error: AppColors.error1,
     ),
 
+    //Card Color
+    cardColor: AppColors.surfaceComponent,
+
     // Border color (divider color for universal border)
     dividerColor: AppColors.borderLight,
 
@@ -61,6 +64,8 @@ class AppTheme {
       surface: AppColors.text1,
       error: AppColors.error1,
     ),
+    //Card Color
+    cardColor: AppColors.surfacePlain,
 
     // Border color (divider color for universal border)
     dividerColor: AppColors.borderDark,

@@ -31,5 +31,5 @@ class AppColors {
   // Surface
   static const Color surfaceMainBG = Color(0xFFF9F9F9);
   static const Color surfaceComponent = Color(0xFFF5F5F5);
-  static const Color surfacePlain = Color(0xFFFFFFFF);
+  static const Color surfacePlain = Color(0xFF1A1A1A);
 }

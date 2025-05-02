@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:work_bee/views/Dashboard/dashboard_page.dart';
 
 class ConfirmationCodePage extends StatefulWidget {
   const ConfirmationCodePage({super.key});
@@ -156,7 +157,15 @@ class _ConfirmationCodePageState extends State<ConfirmationCodePage> {
                 width: double.infinity,
                 height: 50,
                 child: ElevatedButton(
-                  onPressed: _isAllFilled ? () {} : null,
+                  onPressed: _isAllFilled
+                      ? () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const DashboardPage(),
+                              ));
+                        }
+                      : null,
                   style: ButtonStyle(
                     backgroundColor:
                         WidgetStateProperty.resolveWith<Color>((states) {
