@@ -8,6 +8,7 @@ class AppTheme {
     primaryColor: AppColors.primaryMain,
     scaffoldBackgroundColor: AppColors.surfaceMainBG,
     textTheme: AppTypography.lightTextTheme,
+    disabledColor: AppColors.primaryMain.withOpacity(0.1),
 
     // AppBar
     appBarTheme: AppBarTheme(
@@ -45,6 +46,7 @@ class AppTheme {
     primaryColor: AppColors.primaryMain,
     scaffoldBackgroundColor: AppColors.text1,
     textTheme: AppTypography.darkTextTheme,
+    disabledColor: Colors.red,
 
     // AppBar
     appBarTheme: AppBarTheme(

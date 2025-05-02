@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:work_bee/core/theme/app_theme.dart';
+import 'package:work_bee/views/ConfirmOTp/confirm_otp.dart';
 // import 'package:work_bee/home.dart';
 import 'package:work_bee/views/login/login_page.dart';
 import 'package:work_bee/views/sign_page/signup_page.dart';
@@ -21,7 +22,8 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.system,
       // home: const HomePage(),
       // home: const LoginPage(),
-      home: const SignUpPage(),
+      // home: const SignUpPage(),
+      home: const ConfirmationCodePage(),
     );
   }
 }

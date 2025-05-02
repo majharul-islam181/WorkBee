@@ -8,7 +8,8 @@ class ConfirmationCodePage extends StatefulWidget {
 }
 
 class _ConfirmationCodePageState extends State<ConfirmationCodePage> {
-  final List<TextEditingController> _controllers = List.generate(4, (_) => TextEditingController());
+  final List<TextEditingController> _controllers =
+      List.generate(4, (_) => TextEditingController());
   final List<FocusNode> _focusNodes = List.generate(4, (_) => FocusNode());
   bool _isAllFilled = false;
 
@@ -21,7 +22,8 @@ class _ConfirmationCodePageState extends State<ConfirmationCodePage> {
   }
 
   void _checkFilled() {
-    bool filled = _controllers.every((controller) => controller.text.isNotEmpty);
+    bool filled =
+        _controllers.every((controller) => controller.text.isNotEmpty);
     setState(() {
       _isAllFilled = filled;
     });
@@ -55,32 +57,34 @@ class _ConfirmationCodePageState extends State<ConfirmationCodePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
+              Text(
                 "Enter confirmation code",
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w800,
-                ),
+                style: Theme.of(context).textTheme.displayMedium,
               ),
               const SizedBox(height: 8),
-              const Text(
+              Text(
                 "A 4-digit code was sent to lucasscott3@email.com",
-                style: TextStyle(color: Colors.grey),
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                      color: Colors.grey.shade700,
+                    ),
               ),
               const SizedBox(height: 8),
               GestureDetector(
                 onTap: () {
                   // Change email action
                 },
-                child: const Text(
+                child: Text(
                   "Change email",
-                  style: TextStyle(color: Colors.blue, fontWeight: FontWeight.w500),
+                  style: TextStyle(
+                      color: Theme.of(context).primaryColor,
+                      fontWeight: FontWeight.w500),
                 ),
               ),
               const SizedBox(height: 32),
@@ -119,7 +123,9 @@ class _ConfirmationCodePageState extends State<ConfirmationCodePage> {
               Center(
                 child: Text(
                   "Haven't received code yet?",
-                  style: TextStyle(color: Colors.grey.shade700),
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                        color: Colors.grey.shade700,
+                      ),
                 ),
               ),
               const SizedBox(height: 8),
@@ -129,15 +135,16 @@ class _ConfirmationCodePageState extends State<ConfirmationCodePage> {
                     // Resend code action
                   },
                   style: OutlinedButton.styleFrom(
-                    side: const BorderSide(color: Colors.blue),
+                    side: BorderSide(color: Theme.of(context).primaryColor),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 24, vertical: 12),
                   ),
-                  child: const Text(
+                  child: Text(
                     "Resend code",
-                    style: TextStyle(color: Colors.blue),
+                    style: TextStyle(color: Theme.of(context).primaryColor),
                   ),
                 ),
               ),
@@ -149,22 +156,23 @@ class _ConfirmationCodePageState extends State<ConfirmationCodePage> {
                 width: double.infinity,
                 height: 50,
                 child: ElevatedButton(
-                  onPressed: _isAllFilled
-                      ? () {
-                          // Submit action
-                          print("OTP submitted: ${_controllers.map((e) => e.text).join()}");
-                        }
-                      : null,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: _isAllFilled ? Colors.blue : Colors.blue.shade100,
-                    elevation: 0,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
+                  onPressed: _isAllFilled ? () {} : null,
+                  style: ButtonStyle(
+                    backgroundColor:
+                        WidgetStateProperty.resolveWith<Color>((states) {
+                      if (states.contains(WidgetState.disabled)) {
+                        return Theme.of(context)
+                            .disabledColor; // This will now work!
+                      }
+                      return Theme.of(context).primaryColor;
+                    }),
                   ),
-                  child: const Text(
+                  child: Text(
                     "Continue",
-                    style: TextStyle(color: Colors.white),
+                    style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w600,
+                        ),
                   ),
                 ),
               ),
