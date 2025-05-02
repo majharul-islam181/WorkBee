@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:work_bee/core/theme/app_theme.dart';
-import 'package:work_bee/home.dart';
+// import 'package:work_bee/home.dart';
+import 'package:work_bee/login/login_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,11 +13,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Theming Example',
-      theme: AppTheme.lightTheme, // Light Theme
-      darkTheme: AppTheme.darkTheme, // Dark Theme
-      themeMode: ThemeMode.system, // Automatically switches based on system setting
-      home: const HomePage(),
+      theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
+      themeMode: ThemeMode.system,
+      // home: const HomePage(),
+      home: const LoginPage(),
     );
   }
 }
