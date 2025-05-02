@@ -2,6 +2,9 @@
 
 A new Flutter project.
 
+## Figma :
+https://www.figma.com/design/I3gvKPYHSs1hu1K4wuOVLY/Employee-Availability-app-%7C-Admin---Employee-%7C-Mobile-app-UI--Community-?node-id=6-757&p=f&t=7zkzZs5cLndO47sc-0
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
